@@ -1,3 +1,8 @@
 .DS_Store
 backups/
 assets/images/location/handcrafted-cat-demo-original.mp4
+assets/images/location/originals/
+
+.envrc
+flake.*
+scripts/

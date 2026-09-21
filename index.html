@@ -14,6 +14,7 @@
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="assets/images/location/working-together.webp" type="image/webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="home-page">
@@ -40,7 +41,7 @@
 
     <main>
       <section class="upm-hero anchor-section" id="hem">
-        <video class="upm-video" autoplay muted loop playsinline preload="none" poster="assets/images/location/working-together.webp" aria-hidden="true">
+        <video class="upm-video" autoplay muted loop playsinline preload="none" fetchpriority="high" poster="assets/images/location/working-together.webp" aria-hidden="true">
           <source src="assets/images/header/0001-0192.mp4" type="video/mp4" />
         </video>
         <div class="upm-overlay" aria-hidden="true"></div>
@@ -72,13 +73,21 @@
             </figure>
             <figure class="upm-tile upm-tile-wide upm-tile-woodworking" data-title="Woodworking">
               <picture>
-                <source srcset="assets/images/location/woodworking.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/woodworking-1280.webp 1280w, assets/images/location/woodworking.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 840px"
+                />
                 <img src="assets/images/location/woodworking.jpg" alt="Närbild av arbete med verktyg och material" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-large" data-title="CNC machine">
               <picture>
-                <source srcset="assets/images/location/cnc-machine.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/cnc-machine-1280.webp 1280w, assets/images/location/cnc-machine.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
+                />
                 <img src="assets/images/location/cnc-machine.jpg" alt="Maskiner och verktyg i UppMAKEs lokal" loading="lazy" decoding="async" />
               </picture>
             </figure>
@@ -89,43 +98,71 @@
             </figure>
             <figure class="upm-tile upm-tile-large" data-title="Happy members">
               <picture>
-                <source srcset="assets/images/location/happy-members.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/happy-members-1280.webp 1280w, assets/images/location/happy-members.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
+                />
                 <img src="assets/images/location/happy-members.jpg" alt="Deltagare som visar färdiga projekt" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-full upm-tile-sewing" data-title="Sewing machine repair">
               <picture>
-                <source srcset="assets/images/location/repairing%20Sewingmachine.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/repairing%20Sewingmachine-1280.webp 1280w, assets/images/location/repairing%20Sewingmachine.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1680px) calc(100vw - 1.6rem), 1680px"
+                />
                 <img src="assets/images/location/repairing%20Sewingmachine.jpg" alt="Reparation av symaskin i verkstaden" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-wide" data-title="Embroidery">
               <picture>
-                <source srcset="assets/images/location/embroidery.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/embroidery-1280.webp 1280w, assets/images/location/embroidery.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 840px"
+                />
                 <img src="assets/images/location/embroidery.jpg" alt="Textilt skapande och broderi i verkstaden" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-medium" data-title="Member makerspace">
               <picture>
-                <source srcset="assets/images/location/member-makerspace.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/member-makerspace-1280.webp 1280w, assets/images/location/member-makerspace.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
+                />
                 <img src="assets/images/location/member-makerspace.jpg" alt="Gemensam aktivitet med medlemmar i UppMAKE" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-medium" data-title="Crafting">
               <picture>
-                <source srcset="assets/images/location/crafting.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/crafting-1280.webp 1280w, assets/images/location/crafting.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
+                />
                 <img src="assets/images/location/crafting.jpg" alt="Kreativt hantverk och prototypbygge i lokalen" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-medium" data-title="Member meets">
               <picture>
-                <source srcset="assets/images/location/member%20meets.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/member%20meets-1280.webp 1280w, assets/images/location/member%20meets.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
+                />
                 <img src="assets/images/location/member%20meets.jpg" alt="Medlemmar som möts och utvecklar projekt tillsammans" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-portrait" data-title="Prototype build">
               <picture>
-                <source srcset="assets/images/location/prototype-build.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/prototype-build-1280.webp 964w, assets/images/location/prototype-build.webp 1355w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
+                />
                 <img src="assets/images/location/prototype-build.jpg" alt="Teknikprojekt under arbete på arbetsbänk" loading="lazy" decoding="async" />
               </picture>
             </figure>
@@ -136,13 +173,21 @@
             </figure>
             <figure class="upm-tile upm-tile-medium" data-title="Makerspace">
               <picture>
-                <source srcset="assets/images/location/makerspace.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/makerspace-1280.webp 1280w, assets/images/location/makerspace.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
+                />
                 <img src="assets/images/location/makerspace.jpg" alt="Verkstadsmiljö med utrustning för prototyper" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-medium" data-title="Cosplay print">
               <picture>
-                <source srcset="assets/images/location/cosplay%20print.webp" type="image/webp" />
+                <source
+                  type="image/webp"
+                  srcset="assets/images/location/cosplay%20print-1280.webp 1280w, assets/images/location/cosplay%20print.webp 1800w"
+                  sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
+                />
                 <img src="assets/images/location/cosplay%20print.jpg" alt="Detaljerad 3D-print och kreativt skapande i verkstaden" loading="lazy" decoding="async" />
               </picture>
             </figure>
