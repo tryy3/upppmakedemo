@@ -1,4 +1,5 @@
 const body = document.body;
+document.documentElement.classList.add("js-enabled");
 body.classList.add("js-enabled");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-main-nav]");
@@ -10,11 +11,32 @@ if (yearEl) {
 }
 
 if (menuToggle && nav) {
+  let lockedScrollY = 0;
+
   const setMenuOpen = (open) => {
+    const wasOpen = body.classList.contains("nav-open");
+    if (open && !wasOpen) {
+      lockedScrollY = window.scrollY;
+      body.style.top = `-${lockedScrollY}px`;
+    }
+
     body.classList.toggle("nav-open", open);
     document.documentElement.classList.toggle("nav-open", open);
     menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Stäng meny" : "Öppna meny");
+    nav.setAttribute("aria-hidden", String(!open));
+
+    if (!open && wasOpen) {
+      const html = document.documentElement;
+      const previousBehavior = html.style.scrollBehavior;
+      html.style.scrollBehavior = "auto";
+      body.style.top = "";
+      window.scrollTo(0, lockedScrollY);
+      html.style.scrollBehavior = previousBehavior;
+    }
   };
+
+  nav.setAttribute("aria-hidden", "true");
 
   menuToggle.addEventListener("click", () => {
     setMenuOpen(!body.classList.contains("nav-open"));

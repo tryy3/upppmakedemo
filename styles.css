@@ -130,7 +130,17 @@ a {
   z-index: 1000;
   border-bottom: 1px solid var(--line-soft);
   background: rgba(6, 9, 14, 0.76);
+}
+
+/* Keep blur on a pseudo so it does not become the containing block for the mobile overlay. */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .header-inner {
@@ -724,6 +734,19 @@ a {
     min-height: var(--header-height);
   }
 
+  /* Stay viewport-fixed so overflow:hidden on html cannot unstick the bar. */
+  .site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  body {
+    padding-top: var(--header-height);
+  }
+
   .menu-toggle {
     grid-column: 2;
     border-radius: 0;
@@ -739,6 +762,7 @@ a {
     overflow-y: auto;
     overscroll-behavior: contain;
     display: grid;
+    align-content: start;
     gap: 0;
     background: rgba(9, 13, 19, 0.97);
     border-top: 1px solid var(--line);
@@ -768,7 +792,8 @@ a {
     border-bottom: 0;
   }
 
-  body.js-enabled.nav-open .main-nav {
+  /* Closed by default — no early JS class needed to avoid FOUC. */
+  html.nav-open .main-nav {
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
@@ -776,8 +801,15 @@ a {
     transition-delay: 0s;
   }
 
-  html.nav-open,
-  body.js-enabled.nav-open {
+  html.nav-open {
+    overflow: hidden;
+  }
+
+  html.nav-open body {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
     overflow: hidden;
   }
 
@@ -789,49 +821,16 @@ a {
     display: none;
   }
 
-  body.js-enabled.nav-open .menu-toggle span:nth-child(1) {
+  html.nav-open .menu-toggle span:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
   }
 
-  body.js-enabled.nav-open .menu-toggle span:nth-child(2) {
+  html.nav-open .menu-toggle span:nth-child(2) {
     opacity: 0;
   }
 
-  body.js-enabled.nav-open .menu-toggle span:nth-child(3) {
+  html.nav-open .menu-toggle span:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
-  }
-
-  body:not(.js-enabled) .main-nav {
-    position: static;
-    inset: auto;
-    width: auto;
-    max-height: none;
-    overflow: visible;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    background: transparent;
-    border: 0;
-    padding: 0;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transform: none;
-    transition: none;
-  }
-
-  body:not(.js-enabled) .main-nav a {
-    width: auto;
-    padding: 0.45rem 0.6rem;
-    border: 0;
-  }
-
-  body:not(.js-enabled) .menu-toggle {
-    display: none;
-  }
-
-  body:not(.js-enabled) .header-cta {
-    display: inline-flex;
   }
 
   .hero-inner {
@@ -931,7 +930,11 @@ a {
 .home-page .site-header {
   background: rgba(6, 6, 6, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.home-page .site-header::before {
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .home-page .brand img {
@@ -989,43 +992,10 @@ a {
   inset: 0;
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   opacity: 0.43;
   filter: grayscale(1) contrast(1.06) brightness(0.76);
-}
-
-.upm-video-fallback {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.43;
-  filter: grayscale(1) contrast(1.06) brightness(0.76);
-}
-
-.upm-video-fallback img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.no-js-fallback-media {
-  display: block;
-}
-
-.js-enabled .no-js-fallback-media {
-  display: none;
-}
-
-.js-enabled .upm-video,
-.js-enabled .upm-tile video {
-  display: block;
-}
-
-body:not(.js-enabled) .upm-video,
-body:not(.js-enabled) .upm-tile video {
-  display: none;
 }
 
 .upm-overlay {
@@ -1404,17 +1374,17 @@ body:not(.js-enabled) .upm-tile video {
 }
 
 /* Normalize partner/sponsor logo scale when JavaScript is disabled. */
-body:not(.js-enabled) .upm-logos figure {
+html:not(.js-enabled) .upm-logos figure {
   --logo-max-h: 96px;
   min-height: 124px;
 }
 
-body:not(.js-enabled) .upm-logos .logo-orebro-kommun,
-body:not(.js-enabled) .upm-logos .logo-powerminds {
+html:not(.js-enabled) .upm-logos .logo-orebro-kommun,
+html:not(.js-enabled) .upm-logos .logo-powerminds {
   --logo-max-h: 96px;
 }
 
-body:not(.js-enabled) .upm-logos img {
+html:not(.js-enabled) .upm-logos img {
   max-width: 92%;
 }
 
@@ -1746,19 +1716,19 @@ body:not(.js-enabled) .upm-logos img {
 }
 
 /* In no-JS mode, use a uniform collage grid so image tiles have consistent size. */
-body:not(.js-enabled) .upm-collage-grid {
+html:not(.js-enabled) .upm-collage-grid {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-auto-rows: 220px;
   grid-auto-flow: row;
 }
 
-body:not(.js-enabled) .upm-tile,
-body:not(.js-enabled) .upm-tile-full,
-body:not(.js-enabled) .upm-tile-wide,
-body:not(.js-enabled) .upm-tile-portrait,
-body:not(.js-enabled) .upm-tile-large,
-body:not(.js-enabled) .upm-tile-medium,
-body:not(.js-enabled) .upm-tile-small {
+html:not(.js-enabled) .upm-tile,
+html:not(.js-enabled) .upm-tile-full,
+html:not(.js-enabled) .upm-tile-wide,
+html:not(.js-enabled) .upm-tile-portrait,
+html:not(.js-enabled) .upm-tile-large,
+html:not(.js-enabled) .upm-tile-medium,
+html:not(.js-enabled) .upm-tile-small {
   grid-column: auto !important;
   grid-row: auto !important;
 }
@@ -2185,7 +2155,7 @@ body:not(.js-enabled) .upm-tile-small {
     display: none;
   }
 
-  body:not(.js-enabled) .upm-collage-grid {
+  html:not(.js-enabled) .upm-collage-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: 170px;
   }
