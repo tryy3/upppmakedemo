@@ -10,9 +10,11 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="canonical" href="https://www.uppmake.se/" />
+    <link rel="icon" href="favicon.ico" sizes="32x32" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preload" as="image" href="assets/images/location/working-together.webp" type="image/webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
@@ -41,7 +43,7 @@
 
     <main>
       <section class="upm-hero anchor-section" id="hem">
-        <video class="upm-video" autoplay muted loop playsinline preload="none" fetchpriority="high" poster="assets/images/location/working-together.webp" aria-hidden="true">
+        <video class="upm-video" autoplay muted loop playsinline poster="assets/images/location/working-together.webp" aria-hidden="true">
           <source src="assets/images/header/0001-0192.mp4" type="video/mp4" />
         </video>
         <div class="upm-overlay" aria-hidden="true"></div>
@@ -67,15 +69,15 @@
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-wide" data-title="Metalbender">
-              <video data-lazy-video autoplay muted loop playsinline preload="none" poster="assets/images/location/Metalbending.webp" aria-label="Kort klipp från aktivitet i makerspacet">
-                <source data-src="assets/images/location/metalbender.mp4" type="video/mp4" />
+              <video loading="lazy" autoplay muted loop playsinline poster="assets/images/location/Metalbending.webp" aria-label="Kort klipp från aktivitet i makerspacet">
+                <source src="assets/images/location/metalbender.mp4" type="video/mp4" />
               </video>
             </figure>
             <figure class="upm-tile upm-tile-wide upm-tile-woodworking" data-title="Woodworking">
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/woodworking-1280.webp 1280w, assets/images/location/woodworking.webp 1800w"
+                  srcset="assets/images/location/woodworking-800.webp 800w, assets/images/location/woodworking-1280.webp 1280w, assets/images/location/woodworking.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 840px"
                 />
                 <img src="assets/images/location/woodworking.jpg" alt="Närbild av arbete med verktyg och material" loading="lazy" decoding="async" />
@@ -85,22 +87,22 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/cnc-machine-1280.webp 1280w, assets/images/location/cnc-machine.webp 1800w"
+                  srcset="assets/images/location/cnc-machine-800.webp 800w, assets/images/location/cnc-machine-1280.webp 1280w, assets/images/location/cnc-machine.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
                 />
                 <img src="assets/images/location/cnc-machine.jpg" alt="Maskiner och verktyg i UppMAKEs lokal" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-wide upm-tile-cad" data-title="CAD">
-              <video data-lazy-video autoplay muted loop playsinline preload="none" poster="assets/images/location/cad.webp" aria-label="Detaljklipp av arbete i verkstaden">
-                <source data-src="assets/images/location/cad.mp4" type="video/mp4" />
+              <video loading="lazy" autoplay muted loop playsinline poster="assets/images/location/cad.webp" aria-label="Detaljklipp av arbete i verkstaden">
+                <source src="assets/images/location/cad.mp4" type="video/mp4" />
               </video>
             </figure>
             <figure class="upm-tile upm-tile-large" data-title="Happy members">
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/happy-members-1280.webp 1280w, assets/images/location/happy-members.webp 1800w"
+                  srcset="assets/images/location/happy-members-800.webp 800w, assets/images/location/happy-members-1280.webp 1280w, assets/images/location/happy-members.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
                 />
                 <img src="assets/images/location/happy-members.jpg" alt="Deltagare som visar färdiga projekt" loading="lazy" decoding="async" />
@@ -110,7 +112,7 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/repairing%20Sewingmachine-1280.webp 1280w, assets/images/location/repairing%20Sewingmachine.webp 1800w"
+                  srcset="assets/images/location/repairing%20Sewingmachine-800.webp 800w, assets/images/location/repairing%20Sewingmachine-1280.webp 1280w, assets/images/location/repairing%20Sewingmachine.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1680px) calc(100vw - 1.6rem), 1680px"
                 />
                 <img src="assets/images/location/repairing%20Sewingmachine.jpg" alt="Reparation av symaskin i verkstaden" loading="lazy" decoding="async" />
@@ -120,7 +122,7 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/embroidery-1280.webp 1280w, assets/images/location/embroidery.webp 1800w"
+                  srcset="assets/images/location/embroidery-800.webp 800w, assets/images/location/embroidery-1280.webp 1280w, assets/images/location/embroidery.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 840px"
                 />
                 <img src="assets/images/location/embroidery.jpg" alt="Textilt skapande och broderi i verkstaden" loading="lazy" decoding="async" />
@@ -130,7 +132,7 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/member-makerspace-1280.webp 1280w, assets/images/location/member-makerspace.webp 1800w"
+                  srcset="assets/images/location/member-makerspace-800.webp 800w, assets/images/location/member-makerspace-1280.webp 1280w, assets/images/location/member-makerspace.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
                 />
                 <img src="assets/images/location/member-makerspace.jpg" alt="Gemensam aktivitet med medlemmar i UppMAKE" loading="lazy" decoding="async" />
@@ -140,7 +142,7 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/crafting-1280.webp 1280w, assets/images/location/crafting.webp 1800w"
+                  srcset="assets/images/location/crafting-800.webp 800w, assets/images/location/crafting-1280.webp 1280w, assets/images/location/crafting.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
                 />
                 <img src="assets/images/location/crafting.jpg" alt="Kreativt hantverk och prototypbygge i lokalen" loading="lazy" decoding="async" />
@@ -150,7 +152,7 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/member%20meets-1280.webp 1280w, assets/images/location/member%20meets.webp 1800w"
+                  srcset="assets/images/location/member%20meets-800.webp 800w, assets/images/location/member%20meets-1280.webp 1280w, assets/images/location/member%20meets.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
                 />
                 <img src="assets/images/location/member%20meets.jpg" alt="Medlemmar som möts och utvecklar projekt tillsammans" loading="lazy" decoding="async" />
@@ -160,22 +162,22 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/prototype-build-1280.webp 964w, assets/images/location/prototype-build.webp 1355w"
+                  srcset="assets/images/location/prototype-build-800.webp 800w, assets/images/location/prototype-build-1280.webp 964w, assets/images/location/prototype-build.webp 1355w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
                 />
                 <img src="assets/images/location/prototype-build.jpg" alt="Teknikprojekt under arbete på arbetsbänk" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <figure class="upm-tile upm-tile-wide upm-tile-laser-feature" data-title="Laser engrave">
-              <video data-lazy-video autoplay muted loop playsinline preload="none" poster="assets/images/location/lasercut%20earring.webp" aria-label="Maskiner i drift i makerspacet">
-                <source data-src="assets/images/location/laser-engrave.mp4" type="video/mp4" />
+              <video loading="lazy" autoplay muted loop playsinline poster="assets/images/location/lasercut%20earring.webp" aria-label="Maskiner i drift i makerspacet">
+                <source src="assets/images/location/laser-engrave.mp4" type="video/mp4" />
               </video>
             </figure>
             <figure class="upm-tile upm-tile-medium" data-title="Makerspace">
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/makerspace-1280.webp 1280w, assets/images/location/makerspace.webp 1800w"
+                  srcset="assets/images/location/makerspace-800.webp 800w, assets/images/location/makerspace-1280.webp 1280w, assets/images/location/makerspace.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
                 />
                 <img src="assets/images/location/makerspace.jpg" alt="Verkstadsmiljö med utrustning för prototyper" loading="lazy" decoding="async" />
@@ -185,7 +187,7 @@
               <picture>
                 <source
                   type="image/webp"
-                  srcset="assets/images/location/cosplay%20print-1280.webp 1280w, assets/images/location/cosplay%20print.webp 1800w"
+                  srcset="assets/images/location/cosplay%20print-800.webp 800w, assets/images/location/cosplay%20print-1280.webp 1280w, assets/images/location/cosplay%20print.webp 1800w"
                   sizes="(max-width: 760px) calc(100vw - 1.2rem), (max-width: 1080px) 50vw, 560px"
                 />
                 <img src="assets/images/location/cosplay%20print.jpg" alt="Detaljerad 3D-print och kreativt skapande i verkstaden" loading="lazy" decoding="async" />

@@ -2,12 +2,20 @@ Options +MultiViews
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # One hop to the canonical https www origin, keeping the requested path.
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteRule ^ https://www.uppmake.se%{REQUEST_URI} [L,R=301]
 
+  RewriteCond %{HTTP_HOST} ^uppmake\.se$ [NC]
+  RewriteRule ^ https://www.uppmake.se%{REQUEST_URI} [L,R=301]
+
+  # Extensionless routes can fall back to the homepage. Missing files must 404,
+  # otherwise robots.txt and other assets are served as index.html.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !\.[A-Za-z0-9]+$
   RewriteRule ^ index.html [L]
 </IfModule>
 

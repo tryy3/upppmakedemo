@@ -26,7 +26,7 @@ Aktiv policy i `index.html` och `.htaccess`:
 - `frame-src 'self' https://www.google.com https://maps.google.com`
 - `object-src 'none'`
 - `base-uri 'self'`
-- `frame-ancestors 'self'`
+- `frame-ancestors 'self'` (HTTP-header only; a meta tag ignores this directive and logs a console error)
 - `form-action 'self'`
 - `upgrade-insecure-requests`
 
