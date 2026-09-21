@@ -95,15 +95,6 @@ main,
   z-index: 4;
 }
 
-.card,
-.metric,
-.logo-card,
-.link-card,
-.callout,
-.map-wrap,
-.hero-media .card-a,
-.hero-media .card-b,
-.hero-media .card-c,
 .upm-logos figure {
   position: relative;
   z-index: 12;
@@ -176,27 +167,6 @@ a {
   border-radius: 0;
   background: none;
   object-fit: contain;
-}
-
-.brand-text {
-  display: grid;
-  gap: 0.1rem;
-}
-
-.brand-title {
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 1.05rem;
-  line-height: 1;
-}
-
-.brand-sub {
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.65rem;
 }
 
 .main-nav {
@@ -286,410 +256,6 @@ a {
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
-}
-
-.hero {
-  position: relative;
-  overflow: clip;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  border-radius: 999px;
-  filter: blur(36px);
-  opacity: 0.5;
-}
-
-.hero::before {
-  width: 34vw;
-  min-width: 260px;
-  aspect-ratio: 1;
-  top: -15vw;
-  right: -8vw;
-  background: #315bd8;
-  animation: pulse 13s ease-in-out infinite;
-}
-
-.hero::after {
-  width: 38vw;
-  min-width: 320px;
-  aspect-ratio: 1;
-  left: -14vw;
-  bottom: -16vw;
-  background: #1e886f;
-  animation: pulse 15s ease-in-out infinite reverse;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.08);
-  }
-}
-
-.hero-inner {
-  min-height: min(88vh, 860px);
-  padding: clamp(3rem, 7vw, 6.5rem) 0 clamp(2.8rem, 7vw, 5.2rem);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
-  align-items: end;
-  gap: clamp(1.2rem, 4vw, 3.4rem);
-}
-
-.kicker {
-  margin: 0;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.76rem;
-  font-weight: 800;
-}
-
-.hero h1 {
-  margin: 0.6rem 0 0;
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-size: clamp(2.2rem, 7vw, 6rem);
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  max-width: 12ch;
-}
-
-.hero h1 em {
-  font-style: normal;
-  color: var(--accent-2);
-}
-
-.hero p {
-  margin: 1.25rem 0 0;
-  max-width: 60ch;
-  color: var(--text-muted);
-  font-size: clamp(1rem, 1.2vw, 1.18rem);
-}
-
-.hero-actions {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 800;
-  font-size: 0.72rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  padding: 0.82rem 1rem;
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: var(--accent-dark);
-}
-
-.btn-secondary {
-  border-color: var(--line);
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.hero-media {
-  position: relative;
-  min-height: 420px;
-}
-
-.hero-media .card-a,
-.hero-media .card-b,
-.hero-media .card-c {
-  position: absolute;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-md);
-}
-
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-a {
-  inset: 0 6% 18% 0;
-}
-
-.card-b {
-  width: 50%;
-  height: 38%;
-  right: 0;
-  top: 8%;
-}
-
-.card-c {
-  width: 56%;
-  height: 36%;
-  right: 3%;
-  bottom: 0;
-}
-
-.section {
-  padding: clamp(2.8rem, 6vw, 5rem) 0;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.section.alt {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
-}
-
-.section-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.section-title {
-  margin: 0;
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-size: clamp(1.7rem, 4vw, 3.2rem);
-  line-height: 0.97;
-}
-
-.section-title em {
-  font-style: normal;
-  color: var(--accent-2);
-}
-
-.section-link {
-  display: inline-flex;
-  gap: 0.35rem;
-  align-items: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.section-link:hover {
-  color: var(--text);
-}
-
-.lead {
-  margin: 0;
-  max-width: 72ch;
-  color: var(--text-muted);
-}
-
-.grid-2,
-.grid-3,
-.grid-4 {
-  display: grid;
-  gap: 1rem;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.card {
-  border-radius: var(--radius-md);
-  border: 1px solid var(--line);
-  padding: 1.1rem;
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-  box-shadow: var(--shadow-md);
-  transition: transform 0.24s ease, border-color 0.24s ease;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.card h3,
-.card h4 {
-  margin: 0;
-  font-family: "Syne", "Segoe UI", sans-serif;
-  line-height: 1.08;
-}
-
-.card h3 {
-  font-size: 1.36rem;
-}
-
-.card h4 {
-  font-size: 1.05rem;
-}
-
-.card p,
-.card li {
-  margin: 0.7rem 0 0;
-  color: var(--text-muted);
-}
-
-.card ul {
-  margin: 0.7rem 0 0;
-  padding-left: 1.05rem;
-  display: grid;
-  gap: 0.48rem;
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.25rem 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.62rem;
-  color: var(--text-muted);
-  margin-bottom: 0.35rem;
-}
-
-.metric {
-  padding: 1.3rem;
-  background: var(--surface);
-}
-
-.metric strong {
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-size: 2.2rem;
-  line-height: 1;
-  display: block;
-}
-
-.metric span {
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.65rem;
-  font-weight: 700;
-}
-
-.logo-wall {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.85rem;
-}
-
-.logo-card {
-  border-radius: var(--radius-md);
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.03);
-  min-height: 160px;
-  display: grid;
-  place-items: center;
-  padding: 0.9rem;
-}
-
-.logo-card img {
-  max-height: 110px;
-  width: 100%;
-  object-fit: contain;
-  background: #fff;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
-}
-
-.gallery img {
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-}
-
-.callout {
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  padding: 1.2rem;
-  background: linear-gradient(165deg, rgba(125, 240, 216, 0.16), rgba(125, 240, 216, 0.03));
-}
-
-.callout h3 {
-  margin: 0;
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-size: 1.5rem;
-}
-
-.callout p {
-  margin: 0.65rem 0 0;
-  color: var(--text);
-}
-
-.link-list {
-  display: grid;
-  gap: 0.8rem;
-}
-
-.link-card {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  transition: border-color 0.22s ease, transform 0.22s ease;
-}
-
-.link-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.32);
-}
-
-.link-card strong {
-  font-size: 1rem;
-}
-
-.link-card span {
-  display: block;
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  margin-top: 0.2rem;
-}
-
-.map-wrap {
-  margin-top: 1rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  min-height: 390px;
-}
-
-.map-wrap iframe {
-  width: 100%;
-  min-height: 390px;
 }
 
 .footer {
@@ -835,26 +401,6 @@ a {
   html.nav-open .menu-toggle span:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
   }
-
-  .hero-inner {
-    min-height: auto;
-    grid-template-columns: 1fr;
-    padding-top: 3.4rem;
-  }
-
-  .hero-media {
-    min-height: 360px;
-  }
-
-  .grid-4,
-  .grid-3,
-  .logo-wall {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 760px) {
@@ -878,48 +424,6 @@ a {
   .menu-toggle {
     width: 42px;
     height: 42px;
-  }
-
-  .section-head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .grid-2,
-  .grid-3,
-  .grid-4,
-  .logo-wall,
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-media {
-    min-height: 320px;
-  }
-
-  .card-a {
-    inset: 0 0 44% 0;
-  }
-
-  .card-b {
-    width: 58%;
-    height: 40%;
-    top: auto;
-    bottom: 0;
-    left: 0;
-  }
-
-  .card-c {
-    width: 58%;
-    height: 40%;
-    right: 0;
-    bottom: 0;
-  }
-
-  .map-wrap,
-  .map-wrap iframe {
-    min-height: 300px;
   }
 }
 
@@ -952,26 +456,10 @@ a {
   background: none;
 }
 
-.home-page .brand-title {
-  color: #fff;
-  font-size: 1.1rem;
-  letter-spacing: 0.14em;
-}
-
 .home-page .brand-wordmark {
   gap: 0;
 }
 
-.home-page .brand-wordmark .brand-title {
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-weight: 800;
-}
-
-.home-page .brand-sub {
-  display: none;
-}
-
-.home-page .brand-sub,
 .home-page .main-nav a {
   color: rgba(255, 255, 255, 0.9);
 }
@@ -1021,17 +509,6 @@ a {
   padding: clamp(3.2rem, 6vw, 5rem) 0 clamp(2.2rem, 4vw, 3.2rem);
 }
 
-.upm-caption {
-  margin: 0;
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-size: clamp(0.95rem, 1.3vw, 1.3rem);
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.04em;
-  transform: rotate(-6deg) translateX(-14%);
-  transform-origin: center;
-  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
-}
-
 .upm-logo-wrap {
   position: relative;
   width: min(700px, 90vw);
@@ -1068,16 +545,6 @@ a {
   opacity: 0;
   transform: translateY(14px);
   animation: refLogoIn 900ms ease forwards;
-}
-
-.upm-logo-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.upm-logo-svg path {
-  will-change: opacity, transform;
 }
 
 .upm-logo-wrap.glitch-hit {
@@ -1178,14 +645,6 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.72rem;
-}
-
-.upm-kicker-hero {
-  margin: 0;
-  font-size: clamp(0.72rem, 1.1vw, 0.88rem);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
 }
 
 .upm-hero-title {
@@ -1307,28 +766,6 @@ a {
 .upm-who p {
   margin: 0;
   color: rgba(255, 255, 255, 0.74);
-}
-
-.upm-subnav {
-  margin-top: 1.35rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.8rem;
-  padding: 0.6rem 0;
-}
-
-.upm-subnav a {
-  color: rgba(255, 255, 255, 0.72);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.66rem;
-  font-weight: 700;
-}
-
-.upm-subnav a:hover {
-  color: #fff;
 }
 
 .upm-logos {
@@ -1457,33 +894,6 @@ html:not(.js-enabled) .upm-logos img {
 
 .upm-membership .upm-actions {
   justify-content: flex-start;
-}
-
-.upm-membership-steps {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.upm-membership-steps li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  display: grid;
-  grid-template-columns: 54px 1fr;
-  gap: 1rem;
-  padding: 1rem 0.15rem;
-}
-
-.upm-membership-steps span {
-  color: rgba(255, 255, 255, 0.4);
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-weight: 700;
-  font-size: 1.02rem;
-}
-
-.upm-membership-steps p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .upm-lines {
@@ -1713,11 +1123,6 @@ html:not(.js-enabled) .upm-logos img {
   grid-row: span 4;
 }
 
-.upm-tile-small {
-  grid-column: span 3;
-  grid-row: span 3;
-}
-
 /* In no-JS mode, use a uniform collage grid so image tiles have consistent size. */
 html:not(.js-enabled) .upm-collage-grid {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1730,8 +1135,7 @@ html:not(.js-enabled) .upm-tile-full,
 html:not(.js-enabled) .upm-tile-wide,
 html:not(.js-enabled) .upm-tile-portrait,
 html:not(.js-enabled) .upm-tile-large,
-html:not(.js-enabled) .upm-tile-medium,
-html:not(.js-enabled) .upm-tile-small {
+html:not(.js-enabled) .upm-tile-medium {
   grid-column: auto !important;
   grid-row: auto !important;
 }
@@ -2012,11 +1416,6 @@ html:not(.js-enabled) .upm-tile-small {
     grid-column: span 4;
     grid-row: span 4;
   }
-
-  .upm-tile-small {
-    grid-column: span 2;
-    grid-row: span 3;
-  }
 }
 
 @media (max-width: 760px) {
@@ -2099,12 +1498,6 @@ html:not(.js-enabled) .upm-tile-small {
     font-size: 0.72rem;
   }
 
-  .upm-membership-steps li {
-    grid-template-columns: 40px 1fr;
-    gap: 0.72rem;
-    padding: 0.85rem 0.05rem;
-  }
-
   .upm-support-grid {
     grid-template-columns: 1fr;
     gap: 0.8rem;
@@ -2142,11 +1535,6 @@ html:not(.js-enabled) .upm-tile-small {
   .upm-tile-portrait {
     grid-column: span 4;
     grid-row: span 3;
-  }
-
-  .upm-tile-small {
-    grid-column: span 2;
-    grid-row: span 2;
   }
 
   .upm-collage-grid .upm-tile:nth-child(n + 8) {
@@ -2238,18 +1626,6 @@ html:not(.js-enabled) .upm-tile-small {
   gap: 0;
 }
 
-.upm-page .brand-wordmark .brand-title {
-  color: #fff;
-  font-family: "Syne", "Segoe UI", sans-serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.14em;
-  font-weight: 800;
-}
-
-.upm-page .brand-sub {
-  display: none;
-}
-
 .upm-page .main-nav a {
   color: rgba(255, 255, 255, 0.9);
 }
@@ -2266,102 +1642,6 @@ html:not(.js-enabled) .upm-tile-small {
 
 .upm-page .menu-toggle span {
   background: #fff;
-}
-
-.upm-page .hero {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background:
-    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.08), transparent 38%),
-    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.06), transparent 44%),
-    linear-gradient(180deg, #0a0a0d 0%, #070709 100%);
-}
-
-.upm-page .hero::before {
-  background: #2d2f35;
-  opacity: 0.38;
-}
-
-.upm-page .hero::after {
-  background: #1e2027;
-  opacity: 0.34;
-}
-
-.upm-page .kicker {
-  color: rgba(255, 255, 255, 0.66);
-}
-
-.upm-page .hero h1 {
-  color: #fff;
-}
-
-.upm-page .hero h1 em {
-  color: #fff;
-}
-
-.upm-page .hero p {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.upm-page .btn-primary {
-  background: #fff;
-  border-color: #fff;
-  color: #0b0b0e;
-}
-
-.upm-page .btn-secondary {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.24);
-  color: #fff;
-}
-
-.upm-page .section,
-.upm-page .section.alt {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: transparent;
-}
-
-.upm-page .section-title,
-.upm-page .section h2,
-.upm-page .card h3,
-.upm-page .card h4,
-.upm-page .callout h3 {
-  color: #fff;
-}
-
-.upm-page .section-link {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.upm-page .section-link:hover {
-  color: #fff;
-}
-
-.upm-page .card,
-.upm-page .metric,
-.upm-page .logo-card,
-.upm-page .link-card,
-.upm-page .callout {
-  border-color: rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.upm-page .card p,
-.upm-page .card li,
-.upm-page .lead,
-.upm-page .metric span,
-.upm-page .link-card span,
-.upm-page .callout p {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.upm-page .tag {
-  color: rgba(255, 255, 255, 0.7);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.upm-page .map-wrap,
-.upm-page .gallery img {
-  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .upm-page .footer-inner {

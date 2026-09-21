@@ -4,11 +4,6 @@ body.classList.add("js-enabled");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-main-nav]");
 const navLinks = Array.from(document.querySelectorAll("[data-main-nav] a"));
-const yearEl = document.querySelector("[data-year]");
-
-if (yearEl) {
-  yearEl.textContent = String(new Date().getFullYear());
-}
 
 if (menuToggle && nav) {
   let lockedScrollY = 0;
@@ -207,11 +202,11 @@ if (lazyVideos.length) {
   }
 }
 
-const inlineLogoWrap = document.querySelector("[data-inline-svg]");
-if (inlineLogoWrap) {
+const logoGlitchWrap = document.querySelector("[data-logo-glitch]");
+if (logoGlitchWrap) {
   const triggerWrapGlitch = () => {
-    inlineLogoWrap.classList.add("glitch-hit");
-    window.setTimeout(() => inlineLogoWrap.classList.remove("glitch-hit"), 220);
+    logoGlitchWrap.classList.add("glitch-hit");
+    window.setTimeout(() => logoGlitchWrap.classList.remove("glitch-hit"), 220);
   };
 
   const scheduleWrapGlitch = () => {
