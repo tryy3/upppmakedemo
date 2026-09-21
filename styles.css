@@ -127,7 +127,7 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 200;
+  z-index: 1000;
   border-bottom: 1px solid var(--line-soft);
   background: rgba(6, 9, 14, 0.76);
   backdrop-filter: blur(14px);
@@ -221,12 +221,15 @@ a {
   grid-column: 3;
   justify-self: end;
   display: none;
+  position: relative;
+  z-index: 1002;
   width: 46px;
   height: 46px;
   border-radius: 50%;
   border: 1px solid var(--line);
   background: transparent;
   cursor: pointer;
+  touch-action: manipulation;
   place-items: center;
   gap: 4px;
 }
@@ -729,9 +732,12 @@ a {
   .main-nav {
     position: fixed;
     inset: var(--header-height) 0 0;
+    z-index: 1001;
     width: 100%;
+    height: calc(100svh - var(--header-height));
     max-height: calc(100svh - var(--header-height));
     overflow-y: auto;
+    overscroll-behavior: contain;
     display: grid;
     gap: 0;
     background: rgba(9, 13, 19, 0.97);
@@ -741,10 +747,11 @@ a {
     border-right: 0;
     border-radius: 0;
     padding: 0 0 max(1rem, env(safe-area-inset-bottom));
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-14px);
-    transition: 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
   }
 
   .main-nav a {
@@ -762,11 +769,14 @@ a {
   }
 
   body.js-enabled.nav-open .main-nav {
+    visibility: visible;
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+    transition-delay: 0s;
   }
 
+  html.nav-open,
   body.js-enabled.nav-open {
     overflow: hidden;
   }
@@ -803,6 +813,7 @@ a {
     background: transparent;
     border: 0;
     padding: 0;
+    visibility: visible;
     opacity: 1;
     pointer-events: auto;
     transform: none;
