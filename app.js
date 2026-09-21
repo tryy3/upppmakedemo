@@ -165,6 +165,9 @@ const loadLazyVideo = (video) => {
 
 if (lazyVideos.length) {
   if ("IntersectionObserver" in window) {
+    const prefersReducedData = Boolean(navigator.connection && navigator.connection.saveData);
+    const isMobileViewport = window.matchMedia("(max-width: 760px)").matches;
+    const videoRootMargin = prefersReducedData ? "0px" : isMobileViewport ? "80px 0px" : "320px 0px";
     const videoObserver = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -173,7 +176,7 @@ if (lazyVideos.length) {
           videoObserver.unobserve(entry.target);
         }
       },
-      { rootMargin: "420px 0px", threshold: 0.01 }
+      { rootMargin: videoRootMargin, threshold: 0.01 }
     );
 
     lazyVideos.forEach((video) => videoObserver.observe(video));
