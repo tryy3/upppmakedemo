@@ -870,7 +870,7 @@ a {
   }
 
   .brand-wordmark img {
-    height: 32px;
+    height: 60px;
   }
 
   .menu-toggle {
@@ -941,7 +941,7 @@ a {
 
 .home-page .brand-wordmark img,
 .upm-page .brand-wordmark img {
-  height: 60px;
+  height: 60px !important;
   border: 0;
   background: none;
 }
